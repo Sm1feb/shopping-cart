@@ -24,13 +24,14 @@
 		 	<div class="pagnation">
 				<div class="list">
 					<ul>
-					<a href="{{url('/index5')}}"><li>HOME</li></a>
+					<a href="{{url('/home')}}"><li>HOME</li></a>
 					<a href="{{url('/addpro')}}">	<li>NEW PROJECT</li></a>
 						<li>SPECIAL</li>
 						<a href="{{url('/product')}}"><li>ALL PRODUCTS</li></a>
 						<li>REVIEWS</li>
 						<a href="{{url('/index')}}"><li>CONTACT</li></a>
-						<li>FAQS</li>
+						
+						<li><a href="{{url('/ca/'.session()->get('user_session'))}}">MY CART</a></li>&nbsp;
 					</ul>
 					</div>
 				<div class="search">
@@ -69,18 +70,7 @@
 				<div class="contact">
 					<div class="contact-us">
 						<p>Dishwasher</p>
-					</div>
-					<div class="product-info">
-						<span>Sort by:</span>
-						<form>
-							<select>
-								<option>product name</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-							</select>
-						</form>
-					</div>
+</div>
 					<div class="display-product">
 						<span>Displaying 1 to 5(of 6 new product)</span>
 						<div class="btnnn">

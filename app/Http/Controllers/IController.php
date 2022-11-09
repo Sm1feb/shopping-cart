@@ -90,6 +90,10 @@ class IController extends Controller
             return redirect("product");
            
         }
+        else
+        {
+            return redirect("index2");
+        }
     }
     //register of username,password
     public function fm(Request $request)
@@ -352,7 +356,11 @@ public function dsp()
     return view('index7',compact('findrec','data'));
     
 }
-
+public function phome()
+{
+    $product=product::all();
+    return view('index5',compact('product'));
+}
 
 
 
@@ -445,7 +453,7 @@ public function addcart(Request $request, $id='')
     $add->quantity=$request->get('quantity');
     // $add->product_id=$request->get('id');
     $add->user=$request->get('user');
-
+   $add->product_id=$request->get('id');
     $total=$request->get('price')*$request->get('quantity');
 
     if(!empty($request->file('image')))
@@ -464,6 +472,44 @@ public function addcart(Request $request, $id='')
     $add->save();
    }
    return view("add1");
+}
+//for add to cart
+//for displaying on home page
+
+public function addcart2(Request $request, $id='')
+{     
+    $add=product::find($id);
+    echo $id;
+    //$user=$name;
+    //echo $user;
+    if($request->isMethod('post'))
+    {
+    $add= new cart;
+
+    $add->name=$request->get('name');
+    $add->price=$request->get('price');
+    $add->quantity=$request->get('quantity');
+    $add->product_id=$request->get('id');
+    $add->user_id=$request->get('user');
+
+    $total=$request->get('price')*$request->get('quantity');
+
+    if(!empty($request->file('image')))
+    {
+    $file=$request->file('image');
+    $current=uniqid(Carbon::now()->format('Ymdhs'));
+    $file->getClientOriginalName();
+    $file->getClientOriginalExtension();
+    $fullfilename=$current.".".$file->getClientOriginalExtension();
+
+    $destinationPath=public_path('cart');
+    $file->move($destinationPath,$fullfilename);
+    $add->image=$fullfilename;
+    }
+    $add->total=$total;
+    $add->save();
+   }
+   return view("detail");
 }
 //for displaying products on cartpage
 public function cartproduct(Request $request,$user='')

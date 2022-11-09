@@ -30,7 +30,8 @@
 						<a href="{{url('/product')}}"><li>ALL PRODUCTS</li></a>
 						<li>REVIEWS</li>
 						<a href="{{url('/index')}}"><li>CONTACT</li></a>
-						<li>FAQS</li>
+						
+						<li><a href="{{url('/ca/'.session()->get('user_session'))}}">MY CART</a></li>&nbsp;
 					</ul>
 					</div>
 				<div class="search">

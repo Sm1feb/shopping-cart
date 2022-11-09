@@ -79,16 +79,19 @@
 						<div class="machine-pic">
 							<div class="img">
 					  
-						<img name="image" src="uploads/{{isset($findrec[0]->image) ? $findrec[0]->image:""}}/>
+						<img name="image" src="{{asset('uploads/'. $findrec[0]->image)}}"/>
+						
 							</div>
 							<div class="stock">
 								<h2>In Stock: <input type="text" name="stock" value="{{isset($findrec[0]->stock) ? $findrec[0]->stock:""}}"/></h2>
 							</div>
 
 						</div>
+
 						<div class="machine-info">
 							<div class="washer">
 								<p>	{{isset($findrec[0]->name) ? $findrec[0]->name:""}}</p>
+								<input type="hidden" name="id" value="{{isset($findrec[0]->id) ? $findrec[0]->id:""}}">
 							</div>
 							<div class="model-info">
 								<span>Model: <input type="text" name="name" value="{{isset($findrec[0]->model) ? $findrec[0]->model:""}}"/></span>

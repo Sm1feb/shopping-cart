@@ -79,7 +79,8 @@
 						<div class="machine-pic">
 							<div class="img">
 					  
-						<img name="image" src="uploads/{{isset($findrec[0]->image) ? $findrec[0]->image:""}}/>
+							<img name="image" src="{{asset('uploads/'. $findrec[0]->image)}}"/>
+							<input type="hidden" name="id" value="{{isset($findrec[0]->id) ? $findrec[0]->id:""}}">
 							</div>
 							<div class="stock">
 								<h2>In Stock: <input type="text" name="stock" value="{{isset($findrec[0]->stock) ? $findrec[0]->stock:""}}"/></h2>

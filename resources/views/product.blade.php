@@ -24,13 +24,14 @@
 		 	<div class="pagnation">
 				<div class="list">
 					<ul>
-					<a href="{{url('/index5')}}"><li>HOME</li></a>
+					<a href="{{url('/home')}}"><li>HOME</li></a>
 					<a href="{{url('/addpro')}}">	<li>NEW PROJECT</li></a>
 						<li>SPECIAL</li>
 						<a href="{{url('/product')}}"><li>ALL PRODUCTS</li></a>
 						<li>REVIEWS</li>
 						<a href="{{url('/index')}}"><li>CONTACT</li></a>
-						<li>FAQS</li>
+						
+						<li><a href="{{url('/ca/'.session()->get('user_session'))}}">MY CART</a></li>&nbsp;
 					</ul>
 					</div>
 				<div class="search">

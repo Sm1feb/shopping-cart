@@ -136,3 +136,4 @@ Route::post('show3/{id}','App\Http\Controllers\IController@showproduct4');
 Route::get('camera2','App\Http\Controllers\IController@camera2');
 //buy now 
 Route::post('show4/{id}','App\Http\Controllers\IController@showproduct5');
+Route::get('/home',"App\Http\controllers\icontroller@phome");

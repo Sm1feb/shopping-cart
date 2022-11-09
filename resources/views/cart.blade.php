@@ -86,6 +86,7 @@
                            <th>Individual Price</th>
                            <th>Quanity</th>
                            <th>User</th>
+						   <th>Product_Id</th>
 						   <th>Total Price</th>
                            <th>Remove</th> 
                         </tr>
@@ -95,6 +96,7 @@
                            <td>{{$row->price}}</td>
                            <td>{{$row->quantity}}</td>
 						   <td>{{$row->user}}</td>
+						   <td>{{$row->product_id}}</td>
                            <td>{{$row->total}}</td>
                            <td><button><a href="{{url('/remove/'.$row->id)}}">Remove</a></button></td>
                         </tr>
